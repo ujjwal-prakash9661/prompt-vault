@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* small animation helpers */
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(8px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeUp {
+	animation: fadeUp 360ms ease-out both;
+}
+
+.focus-strong:focus {
+	box-shadow: 0 0 0 6px rgba(99,102,241,0.08);
+	transform: translateY(-1px);
+}
+
+/* App background and card styles */
+.app-bg {
+	background: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.08), transparent 10%),
+							linear-gradient(120deg, rgba(99,102,241,0.06), rgba(99,102,241,0.02));
+}
+
+.frost-card {
+	background: rgba(255,255,255,0.8);
+	backdrop-filter: blur(6px) saturate(120%);
+	-webkit-backdrop-filter: blur(6px) saturate(120%);
+	border: 1px solid rgba(255,255,255,0.6);
+}
+
+/* Dark mode overrides when html has .dark */
+html.dark .app-bg {
+	background: radial-gradient(1000px 500px at 90% 10%, rgba(99,102,241,0.08), transparent 10%),
+							linear-gradient(120deg, rgba(17,24,39,0.6), rgba(17,24,39,0.9));
+}
+
+html.dark .frost-card {
+	/* deeper, warmer dark frosted card for better contrast */
+	background: linear-gradient(180deg, rgba(15,23,42,0.72), rgba(7,10,23,0.6));
+	border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Smooth transitions for theme changes */
+html, body, .app-bg, .frost-card {
+	transition: background-color 220ms ease, color 220ms ease, transform 160ms ease, box-shadow 220ms ease;
+}
+
+/* container that ensures readable contrast on top of the app-bg */
+.app-container {
+	color: #0f172a; /* slate-900 for light */
+}
+
+/* improved dark text color for legibility */
+html.dark .app-container {
+	color: #e7eef8; /* slightly brighter than before for small text */
+}
+
+/* improved dark background gradient for the app */
+html.dark .app-bg {
+	background: radial-gradient(900px 400px at 10% 8%, rgba(99,102,241,0.06), transparent 8%),
+							linear-gradient(120deg, rgba(2,6,23,0.9), rgba(10,14,25,0.95));
+}
+
+/* Dark-mode utility overrides to improve readability */
+/* Use neutral surfaces in dark mode for better contrast */
+html.dark .bg-white {
+	background-color: rgba(17,24,39,0.9) !important; /* slate-900 */
+	border-color: rgba(255,255,255,0.06) !important;
+}
+
+html.dark .frost-card,
+html.dark .bg-white {
+	color: #e6eef8 !important;
+}
+
+/* brighten commonly used gray text utilities in dark mode */
+html.dark .text-gray-500 { color: rgba(230,238,248,0.68) !important; }
+html.dark .text-gray-600 { color: rgba(230,238,248,0.6) !important; }
+html.dark .text-gray-700 { color: rgba(230,238,248,0.5) !important; }
+
+/* make pale utility backgrounds visible in dark mode */
+html.dark .bg-indigo-50 { background-color: rgba(99,102,241,0.08) !important; color: #e6ecff !important; }
+html.dark .bg-green-50 { background-color: rgba(16,185,129,0.06) !important; color: #e6fff0 !important; }
+html.dark .bg-gray-50 { background-color: rgba(255,255,255,0.02) !important; color: #dbe7f6 !important; }
+
+/* adjust borders and placeholders */
+html.dark .border-gray-200 { border-color: rgba(255,255,255,0.04) !important; }
+html.dark input::placeholder, html.dark textarea::placeholder { color: rgba(230,238,248,0.5) !important; }
+
+/* ensure icons/buttons inside cards are visible */
+html.dark .text-yellow-500 { color: #f6c84c !important; }
+html.dark .text-gray-400 { color: rgba(230,238,248,0.45) !important; }
