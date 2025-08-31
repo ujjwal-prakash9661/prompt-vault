@@ -101,7 +101,7 @@ const Dashboard = () => {
   // Reusable fetchers so we can refresh after import
   const fetchPrompts = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/prompts", {
+      const res = await fetch("https://prompt-vault-wnpk.onrender.com/api/prompts", {
         credentials: "include",
       });
       const data = await res.json();

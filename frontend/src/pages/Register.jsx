@@ -28,7 +28,7 @@ const Register = () => {
       // Backend expects: fullName.{firstName,lastName}, email, password
       const [firstName, ...rest] = parts;
       const lastName = rest.join(' ').trim();
-      const res = await fetch("http://localhost:3000/api/auth/register", {
+      const res = await fetch("https://prompt-vault-wnpk.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",

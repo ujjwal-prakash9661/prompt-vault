@@ -5,7 +5,7 @@ let socket
 
 export function getSocket() {
   if (!socket) {
-    socket = io('http://localhost:3000', {
+    socket = io('https://prompt-vault-wnpk.onrender.com', {
       withCredentials: true,
       transports: ['websocket'],
     })

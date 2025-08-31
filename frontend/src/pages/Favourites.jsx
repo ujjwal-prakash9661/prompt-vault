@@ -11,7 +11,7 @@ const Favourites = () => {
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/user/favourites", {
+        const res = await fetch("https://prompt-vault-wnpk.onrender.com/api/user/favourites", {
           credentials: "include", 
         });
         const data = await res.json();
