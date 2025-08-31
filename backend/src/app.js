@@ -5,6 +5,7 @@ const authRoutes = require('./routes/auth.routes')
 const promptRoutes = require('./routes/prompt.routes')
 
 const userRoutes = require('./routes/user.routes')
+const path = require("path");
 
 const helmet = require('helmet')
 const cors = require('cors')
